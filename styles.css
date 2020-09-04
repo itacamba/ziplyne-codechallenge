@@ -62,18 +62,6 @@ a{
     font-size: 40px;
     line-height: 50px;
 }
-/* .slide-from-left{
-    animation-name: slide-from-left;
-    animation-duration: 3s;
-}
-@keyframes slide-from-left {
-    from {
-        transform: translateX(-100%);
-    }
-    to {
-        transform: translateX(0%);
-    }
-  } */
 
 header{
     width: 100%;
@@ -126,6 +114,57 @@ nav a:hover{
     margin-right: 25px;
     cursor: pointer;
 }
+#mobile-nav{
+
+    display: none;
+}
+#menu-icon{
+    width: 30px;
+    height:16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    cursor: pointer;
+}
+.icon-line{
+    width: 100%;
+    height: 2px;
+    background: #262A94;
+}
+.icon-line:nth-child(2){
+    width: 80%;
+}
+#mobile-items{
+    width: 250px;
+    position: absolute;
+    top:65px;
+    right: 0;
+    background: rgba(233, 223, 252, 1);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    z-index: 1000;
+    display: none;
+    animation: slide-from-right .5s;
+}
+@keyframes slide-from-right{
+    from {right: -150px}
+    to {right: 0;}
+}
+#mobile-items a{
+    padding: 20px 0;
+    padding-right: 20px;
+    border-bottom: 1px solid rgba(0,0,0,.2);
+    text-align: right;
+}
+#mobile-items a:hover{
+    background: rgba(215, 194, 253, 0.671);
+}
+/* #mobile-items a:nth-child(6){
+    width: 80%;
+    text-align: center;
+} */
 .purple{
 /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#9a60f2+0,8b4cef+18,7131f9+50,8b4cef+85,9a60f2+100 */
 background: rgb(154,96,242); /* Old browsers */
@@ -133,8 +172,9 @@ background: -moz-linear-gradient(top,  rgba(154,96,242,1) 0%, rgba(139,76,239,1)
 background: -webkit-linear-gradient(top,  rgba(154,96,242,1) 0%,rgba(139,76,239,1) 18%,rgba(113,49,249,1) 50%,rgba(139,76,239,1) 85%,rgba(154,96,242,1) 100%); /* Chrome10-25,Safari5.1-6 */
 background: linear-gradient(to bottom,  rgba(154,96,242,1) 0%,rgba(139,76,239,1) 18%,rgb(113, 49, 249) 50%,rgba(139,76,239,1) 85%,rgba(154,96,242,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9a60f2', endColorstr='#9a60f2',GradientType=0 ); /* IE6-9 */
-
+color: #ffffff;
 }
+
 .join-icon{
     width: 20px;
     height: 100%;
@@ -166,7 +206,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9a60f2', end
 #product-details{
     display: flex;
     justify-content: space-between;
-    /* border:1px solid red; */
     padding-left: 5%;
     z-index: 1;
 }
@@ -187,23 +226,27 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9a60f2', end
 }
 #about-product p {
     width: 60%;
+    position: absolute;
     font-size: 25px;
-    margin-top: 230px;
+    /* margin-top: 230px;
     margin-left: 150px;
-    line-height: 33px;
+    line-height: 33px; */
     color: #ffffff;
 }
 #diamond{
     width: 110%;
-    position: absolute;
+    position: relative;
     right: -100px;
 }
 #diamond img{
     width: 100%;
 }
-#about-product p{
+#diamond p{
     position: absolute;
-    top:0;
+    top: 50%;
+    left: 50%;
+    text-align: right;
+    transform: translate(-50%, -50%);
 }
 .banner{
     width: 100%;
@@ -218,3 +261,46 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9a60f2', end
     bottom: 0;
     z-index: 0;
 }
+
+@media screen and (max-width: 1000px) {
+    nav{ 
+        display: none;
+    }
+
+    .call-to-action{
+        display: none;
+    }
+    #mobile-nav{
+        display: flex;
+    }
+    #wave-content h1{
+        font-size: 30px;
+    }
+    .section-title h1{
+        font-size: 30px;
+    }
+    #product-details{
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+        padding: 0 5%;
+    }
+    #product-img{
+        width: 100%;
+        padding: 0;
+    }
+    #about-product{
+        width: 100%;
+    }
+    #diamond{
+        width: 80%;
+        margin: 0 auto;
+        right: 0;
+        position: relative;
+        margin-bottom: 40px;
+    }
+    #diamond p{
+        text-align: center;
+        font-size: 3vw;
+    }
+  }
