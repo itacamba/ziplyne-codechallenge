@@ -194,10 +194,12 @@ color: #ffffff;
 }
 .section-title{
     color: #262A94;
+    width: 700px;
     margin-top:70px;
     text-align: left;
     padding: 0 5%;
     margin-bottom: 40px;
+
 }
 .section-title h1{
     font-weight: 300;
@@ -273,10 +275,18 @@ color: #ffffff;
     #mobile-nav{
         display: flex;
     }
+    #wave-content{
+    }
     #wave-content h1{
-        font-size: 30px;
+        width: 80%;
+        line-height: 35px;
+        font-size: 27px;
+    }
+    .section-title{
+        width: 100%;
     }
     .section-title h1{
+        width: 80%;
         font-size: 30px;
     }
     #product-details{
